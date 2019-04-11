@@ -8,16 +8,15 @@ public class RightTriangle extends Triangle{
 		super(pointRA, color, fill);
 		
 		// Calculates and stores point for the lower base
-		int xLB = (int)pointRA.getX() + base;
-		int yLB = (int)pointRA.getY();
-		Point pointLB = new Point(xLB, yLB);
-		location[1] = pointLB;
+		int xBase = (int)pointRA.getX() + base;
+		int yBase = (int)pointRA.getY();
+		Point pointLeftOrRightOfBase = new Point(xBase, yBase);
+		location[1] = pointLeftOrRightOfBase;
 		
 		// Calculates and stores point for the upper left corner of the triangle
-		int xUL = (int)pointRA.getX();
-		int yUL = (int)pointRA.getY() + height;
-		Point pointUL = new Point(xUL, yUL);
-		location[2] = pointUL;
-		
+		int xHeight = (int)pointRA.getX();
+		int yHeight = (int)pointRA.getY() + height;
+		Point pointAboveOrBelowBase = new Point(xHeight, yHeight);
+		location[2] = pointAboveOrBelowBase;
 	}
 }
