@@ -27,7 +27,5 @@ public class Rectangle extends Polygon{
 		int yBR = (int)pointUL.getY() + height;
 		Point pointBR = new Point(xBR, yBR);
 		location[3] = pointBR;
-		
-		
 	}
 }
