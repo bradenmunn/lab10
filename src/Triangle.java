@@ -19,9 +19,9 @@ public abstract class Triangle extends Polygon
 	 * @param color Of the shape
 	 * @param filled True if shape is filled when drawn
 	 */
-	public Triangle(Point pointLB, Color color, boolean filled) 
+	public Triangle(Point pointLB, Color color, boolean fill) 
 	{
-		super(color, filled);
+		super(color, fill);
         
         location = new Point[3];
         

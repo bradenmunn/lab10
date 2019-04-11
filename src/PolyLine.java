@@ -4,6 +4,7 @@ import java.awt.Point;
 public class PolyLine {
 	
 	public PolyLine(Point pointUL, Point pointUR, int thickness, Color color, boolean fill) {
-		//TODO
+		super(color, fill);
+		//TODO thickness??
 	}
 }
