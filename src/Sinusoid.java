@@ -55,7 +55,7 @@ public class Sinusoid extends Shape
 		location = new Point[timeFrame];
 		location[0] = start;
 
-		// Set the wave offsets for x and y as teh starting point of the sinusoid
+		// Set the wave offsets for x and y as the starting point of the sinusoid
 		int x0 = location[0].x;
 		int y0 = location[0].y; 
 		
