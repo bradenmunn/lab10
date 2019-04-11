@@ -2,9 +2,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class Shape implements Drawable{
+public abstract class Shape implements Drawable{
 
-	private Point[] location;
+	protected Point[] location;
 	private Color color;
 	private boolean filled;
 	
