@@ -15,6 +15,7 @@ public abstract class Polygon extends Shape {
 		int[] xCoordinates = new int[numPoints];
 		int[] yCoordinates = new int[numPoints];
 		
+		// Extract individual x and y coordinates of Points
 		int index = 0;
 		for(Point point: location)
 		{
