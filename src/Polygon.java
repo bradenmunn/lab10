@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 
 public abstract class Polygon extends Shape {
 
@@ -10,6 +11,18 @@ public abstract class Polygon extends Shape {
 	
 	public void draw(Graphics graphics)
 	{
+		int numPoints = location.length;
+		int[] xCoordinates = new int[numPoints];
+		int[] yCoordinates = new int[numPoints];
 		
+		int index = 0;
+		for(Point point: location)
+		{
+			xCoordinates[index] = (int)point.getX();
+			yCoordinates[index] = (int)point.getY();
+			++index;
+		}
+		
+		graphics.drawPolygon(xCoordinates, yCoordinates, numPoints);
 	}
 }
