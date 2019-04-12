@@ -72,13 +72,15 @@ public class Sinusoid extends Shape
 			// convert time to radians
 			double rad = angFreq * t;
 			
-			// TODO: calculate next x,y point
+			// Calculate next x,y point
 			//y = yOffset + amplitude * sin(radians)
 			//x = xOffset + i * dx;
-			int xNext = ... // TODO:
-			int yNext = ... // TODO:
+			int xNext = x0 + i + dx;
+			int yNext = (int)(y0 + amplitude + Math.sin(rad));
 			
-			// TODO: create a point and store it into the locations list
+			// Create a point and store it into the locations list
+			Point nextPoint = new Point(xNext, yNext);
+			location[i] = nextPoint;
 		}
 	}
 
