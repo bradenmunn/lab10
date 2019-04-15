@@ -10,7 +10,7 @@ import java.awt.Point;
  * Class to represent and define how a sinusoid is drawn
  * 
  * @author MoSho
- * @author _______________
+ * @author Braden Munn
  * @version April 11, 2019
  */
 public class Sinusoid extends Shape 
@@ -100,7 +100,15 @@ public class Sinusoid extends Shape
         
         int nPoints = location.length;
         
-        // TODO: Draw a sequence of connected line segments to render a sinusoid
+        for(int i = 0; i < nPoints; ++i)
+        {
+        	int xCurrent = location[i].x;
+        	int yCurrent = location[i].y;
+        	int xNext = location[i + 1].x;
+        	int yNext = location[i + 1].y;
+        	graphics.drawLine(xCurrent, yCurrent, xNext, yNext);
+        }
+        
 
 	}
 
