@@ -37,10 +37,9 @@ public class Oval extends Shape{
 	@Override
 	public void draw(Graphics graphics)
 	{
-		Point[] list = getLocation();
-		Point upperL = list[0];
-		int x = (int)upperL.getX();
-		int y = (int)upperL.getY();
+		Point upperL = location[0];
+		int x = upperL.x;
+		int y = upperL.y;
 		
 		graphics.setColor(this.getColor());
 		if(this.isFilled())

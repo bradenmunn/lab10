@@ -34,6 +34,14 @@ public class DrawFrame extends JFrame{
 		Diamond buttonMiddle = new Diamond(new Point(495, 440), 10, Color.BLACK, true);
 		Diamond buttonBottom = new Diamond(new Point(495, 530), 10, Color.BLACK, true);
 		
+		// Arms TODO
+		Sinusoid rightArm = new Sinusoid(new Color(101, 67, 33), new Point(600, 400), 5, 1, 100);
+		
+		// Face
+		RightTriangle nose = new RightTriangle(new Point(490, 260), 35, -25, Color.ORANGE, true);
+		IsoscelesTriangle leftEye = new IsoscelesTriangle(new Point(465, 215), 20, -20, Color.BLACK, true);
+		IsoscelesTriangle rightEye = new IsoscelesTriangle(new Point(515, 215), 20, -20, Color.BLACK, true);
+		
 		panel.addShape(sky);
 		panel.addShape(snow);
 		panel.addShape(baseOutline);
@@ -46,6 +54,10 @@ public class DrawFrame extends JFrame{
 		panel.addShape(buttonTop);
 		panel.addShape(buttonMiddle);
 		panel.addShape(buttonBottom);
+		
+		panel.addShape(nose);
+		panel.addShape(leftEye);
+		panel.addShape(rightEye);
 		
 		
 		

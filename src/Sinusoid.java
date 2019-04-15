@@ -100,7 +100,7 @@ public class Sinusoid extends Shape
         
         int nPoints = location.length;
         
-        for(int i = 0; i < nPoints; ++i)
+        for(int i = 0; i < nPoints - 1; ++i)
         {
         	int xCurrent = location[i].x;
         	int yCurrent = location[i].y;
