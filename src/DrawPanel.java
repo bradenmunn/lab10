@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class DrawPanel extends JPanel{
 
-	private ArrayList<Shape> shapeList;
+	private ArrayList<Shape> shapeList = new ArrayList<Shape>();
 	
 	public void addShape(Shape shape)
 	{
@@ -13,6 +13,9 @@ public class DrawPanel extends JPanel{
 	
 	protected void paintComponent(Graphics graphics)
 	{
-		
+		for(Shape s: shapeList)
+		{
+			 s.draw(graphics);
+		}
 	}
 }

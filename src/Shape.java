@@ -29,9 +29,4 @@ public abstract class Shape implements Drawable{
 		return location;
 	}
 
-	@Override
-	public void draw(Graphics graphics) {
-		// TODO Auto-generated method stub
-		
-	}
 }

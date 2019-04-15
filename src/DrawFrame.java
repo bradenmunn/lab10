@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Point;
+
 import javax.swing.JFrame;
 
 public class DrawFrame extends JFrame{
@@ -6,11 +9,51 @@ public class DrawFrame extends JFrame{
 	
 	public DrawFrame(String title)
 	{
-		JFrame frame = new JFrame(title);
+		super(title);
+		this.setSize(1000, 1000);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		
+		DrawPanel panel = new DrawPanel();
+		this.add(panel);
+		
+		// Background
+		Square sky = new Square(new Point(0,0), 1000, Color.BLUE, true);
+		Rectangle snow = new Rectangle(new Point(0, 600), 1000, 400, Color.WHITE, true);
+		
+		// Snowman body
+		Oval baseOutline = new Oval(new Point(345, 495), 310, 210, Color.BLACK, true);
+			Oval base = new Oval(new Point(350, 500), 300, 200, Color.WHITE, true);
+		Circle middleOutline = new Circle(new Point(395, 295), 210, Color.BLACK, true);
+			Circle middle = new Circle(new Point(400, 300), 200, Color.WHITE, true);	
+		Circle headOutline = new Circle(new Point(420, 145), 160, Color.BLACK, true);
+			Circle head = new Circle(new Point(425, 150), 150, Color.WHITE, true);
+		
+		// Buttons
+		Diamond buttonTop = new Diamond(new Point(495, 380), 10, Color.BLACK, true);
+		Diamond buttonMiddle = new Diamond(new Point(495, 440), 10, Color.BLACK, true);
+		Diamond buttonBottom = new Diamond(new Point(495, 530), 10, Color.BLACK, true);
+		
+		panel.addShape(sky);
+		panel.addShape(snow);
+		panel.addShape(baseOutline);
+		panel.addShape(base);
+		panel.addShape(middleOutline);
+		panel.addShape(middle);
+		panel.addShape(headOutline);
+		panel.addShape(head);
+		
+		panel.addShape(buttonTop);
+		panel.addShape(buttonMiddle);
+		panel.addShape(buttonBottom);
+		
+		
+		
+		
 	}
 	
 	public static void main(String[] args)
 	{
-		
+		DrawFrame frame = new DrawFrame("My Picture");
 	}
 }

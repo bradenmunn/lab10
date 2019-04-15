@@ -24,6 +24,14 @@ public abstract class Polygon extends Shape {
 			++index;
 		}
 		
-		graphics.drawPolygon(xCoordinates, yCoordinates, numPoints);
+		// Sets the current color
+		graphics.setColor(this.getColor());
+		
+		if(this.isFilled())
+			graphics.fillPolygon(xCoordinates, yCoordinates, numPoints);
+		else
+			graphics.drawPolygon(xCoordinates, yCoordinates, numPoints);
+			
+			
 	}
 }

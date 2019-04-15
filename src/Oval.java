@@ -19,8 +19,9 @@ public class Oval extends Shape{
 		super(color, filled);
 		diameter1 = d1;
 		diameter2 = d2;
-		location[0] = pointUL;
 		
+		location = new Point[1];
+		location[0] = pointUL;
 	}
 	
 	public int getDiameter1()
@@ -40,6 +41,12 @@ public class Oval extends Shape{
 		Point upperL = list[0];
 		int x = (int)upperL.getX();
 		int y = (int)upperL.getY();
-		graphics.drawOval(x, y, diameter1, diameter2);
+		
+		graphics.setColor(this.getColor());
+		if(this.isFilled())
+			graphics.fillOval(x, y, diameter1, diameter2);
+		else
+			graphics.drawOval(x, y, diameter1, diameter2);
+
 	}
 }
