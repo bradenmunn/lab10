@@ -7,6 +7,10 @@ public class DrawFrame extends JFrame{
 
 	private static DrawPanel drawPanel;
 	
+	/**
+	 * Creates an image of a snowman in the window
+	 * @param title Title for the JFrame
+	 */
 	public DrawFrame(String title)
 	{
 		super(title);
@@ -34,8 +38,9 @@ public class DrawFrame extends JFrame{
 		Diamond buttonMiddle = new Diamond(new Point(495, 440), 10, Color.BLACK, true);
 		Diamond buttonBottom = new Diamond(new Point(495, 530), 10, Color.BLACK, true);
 		
-		// Arms TODO
-		Sinusoid rightArm = new Sinusoid(new Color(101, 67, 33), new Point(600, 400), 5, 1, 100);
+		// Arms
+		Sinusoid rightArm = new Sinusoid(new Color(101, 67, 33), new Point(600, 400), 1, 4, 10);
+		Sinusoid leftArm = new Sinusoid(new Color(101, 67, 33), new Point(20, 400), 1, 4, 10);
 		
 		// Face
 		RightTriangle nose = new RightTriangle(new Point(490, 260), 35, -25, Color.ORANGE, true);
@@ -55,12 +60,12 @@ public class DrawFrame extends JFrame{
 		panel.addShape(buttonMiddle);
 		panel.addShape(buttonBottom);
 		
+		panel.addShape(rightArm);
+		panel.addShape(leftArm);
+		
 		panel.addShape(nose);
 		panel.addShape(leftEye);
 		panel.addShape(rightEye);
-		
-		
-		
 		
 	}
 	

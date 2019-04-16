@@ -1,8 +1,21 @@
 import java.awt.Color;
 import java.awt.Point;
 
+/**
+ * Class to create an isosceles triangle 
+ * @author Braden Munn
+ *
+ */
 public class IsoscelesTriangle extends Triangle{
 
+	/**
+	 * 
+	 * @param pointLB Base point
+	 * @param base Length of the base
+	 * @param height Vertical length from base point to top point
+	 * @param color Color of the triangle
+	 * @param fill Whether or not the shape is filled
+	 */
 	public IsoscelesTriangle(Point pointLB, int base, int height, Color color, boolean fill)
 	{
 		super(pointLB, color, fill);
