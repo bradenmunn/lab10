@@ -1,2 +1,2 @@
 # lab10
-![Snowman Image] (Snowman.png)
+![Snowman Image](Snowman.png)
