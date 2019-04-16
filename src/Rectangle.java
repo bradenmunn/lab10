@@ -1,8 +1,21 @@
 import java.awt.Color;
 import java.awt.Point;
 
+/**
+ * Class to create a Rectangle
+ * @author Braden Munn
+ *
+ */
 public class Rectangle extends Polygon{
 
+	/**
+	 * 
+	 * @param pointUL Upper left point
+	 * @param width Rectangle's width
+	 * @param height Rectangle's height
+	 * @param color Rectangle's color
+	 * @param filled Whether or not the Rectangle is filled
+	 */
 	public Rectangle(Point pointUL, int width, int height, Color color, boolean filled)
 	{
 		super(color, filled);

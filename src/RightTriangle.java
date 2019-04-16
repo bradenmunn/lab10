@@ -1,8 +1,21 @@
 import java.awt.Color;
 import java.awt.Point;
 
+/**
+ * Class to create a RightTriangle
+ * @author Braden Munn
+ *
+ */
 public class RightTriangle extends Triangle{
 
+	/**
+	 * 
+	 * @param pointRA Point closest to the right angle
+	 * @param base Length of base
+	 * @param height Length from base to upper most point
+	 * @param color Color of the RightTriangle
+	 * @param fill Whether or not the RightTriangle is filled
+	 */
 	public RightTriangle(Point pointRA, int base, int height, Color color, boolean fill)
 	{
 		super(pointRA, color, fill);

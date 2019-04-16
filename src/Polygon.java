@@ -2,6 +2,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
+/**
+ * Abstract parent class for a generic Polygon
+ * @author Braden Munn
+ *
+ */
 public abstract class Polygon extends Shape {
 
 	public Polygon(Color color, boolean filled)
