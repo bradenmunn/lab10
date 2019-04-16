@@ -13,11 +13,11 @@ public abstract class Triangle extends Polygon
 {
 
 	/**
-	 * Constructor a triangle
+	 * Constructor for a triangle
 	 * 
 	 * @param pointLB A point on the base on the triangle
-	 * @param color Of the shape
-	 * @param filled True if shape is filled when drawn
+	 * @param color Color of the shape
+	 * @param fill True if shape is filled when drawn
 	 */
 	public Triangle(Point pointLB, Color color, boolean fill) 
 	{

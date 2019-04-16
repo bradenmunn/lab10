@@ -15,8 +15,8 @@ public abstract class Shape implements Drawable{
 	
 	/**
 	 * Constructor for Shape
-	 * @param color
-	 * @param filled
+	 * @param color Color of the Shape
+	 * @param filled Whether or not the Shape is filled
 	 */
 	public Shape(Color color, boolean filled)
 	{

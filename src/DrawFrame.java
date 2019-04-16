@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Point;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
@@ -10,8 +11,9 @@ public class DrawFrame extends JFrame{
 	/**
 	 * Creates an image of a snowman in the window
 	 * @param title Title for the JFrame
+	 * @throws IOException for file
 	 */
-	public DrawFrame(String title)
+	public DrawFrame(String title) throws IOException
 	{
 		super(title);
 		this.setSize(1000, 1000);
@@ -19,6 +21,8 @@ public class DrawFrame extends JFrame{
 		this.setVisible(true);
 		
 		DrawPanel panel = new DrawPanel();
+		panel.setSize(1000, 1000);
+		panel.setBounds(0, 0, 1000, 1000);
 		this.add(panel);
 		
 		// Background
@@ -67,10 +71,15 @@ public class DrawFrame extends JFrame{
 		panel.addShape(leftEye);
 		panel.addShape(rightEye);
 		
+
+		PanelToImage.makePanelPNGImage(panel, "Snowman");
+		
+		
+		
 	}
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
-		DrawFrame frame = new DrawFrame("My Picture");
+		DrawFrame frame = new DrawFrame("Snowman");
 	}
 }

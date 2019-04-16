@@ -23,12 +23,12 @@ public class RectangleTest {
         // Verify the location of points for a rectangle and a square
         Assert.assertEquals("Incorrect UL Point for the Rectangle", new Point(100, 100), r1.getLocation()[0]);
         Assert.assertEquals("Incorrect UR Point for the Rectangle", new Point(200, 100), r1.getLocation()[1]);
-        Assert.assertEquals("Incorrect BL Point for the Rectangle", new Point(100, 150), r1.getLocation()[2]);
-        Assert.assertEquals("Incorrect BR Point for the Rectangle", new Point(200, 150), r1.getLocation()[3]);
+        Assert.assertEquals("Incorrect BR Point for the Rectangle", new Point(200, 150), r1.getLocation()[2]);
+        Assert.assertEquals("Incorrect BL Point for the Rectangle", new Point(100, 150), r1.getLocation()[3]);
         Assert.assertEquals("Incorrect UL Point for the Square", new Point(200, 200), s1.getLocation()[0]);
         Assert.assertEquals("Incorrect UR Point for the Square", new Point(250, 200), s1.getLocation()[1]);
-        Assert.assertEquals("Incorrect BL Point for the Square", new Point(200, 250), s1.getLocation()[2]);
-        Assert.assertEquals("Incorrect BR Point for the Square", new Point(250, 250), s1.getLocation()[3]);
+        Assert.assertEquals("Incorrect BR Point for the Square", new Point(250, 250), s1.getLocation()[2]);
+        Assert.assertEquals("Incorrect BL Point for the Square", new Point(200, 250), s1.getLocation()[3]);
         
         // Verify the colors for each shape
         Assert.assertEquals("Incorrect color for the Rectangle", Color.BLUE, r1.getColor());
