@@ -4,6 +4,11 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 
+/**
+ * Class for displaying GUI elements
+ * @author Braden Munn
+ *
+ */
 public class DrawFrame extends JFrame{
 
 	private static DrawPanel drawPanel;
