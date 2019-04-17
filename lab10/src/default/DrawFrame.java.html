@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>DrawFrame.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (2) (Apr 16, 2019 10:27:08 PM)</a> &gt; <a href="../../index.html" class="el_group">lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">DrawFrame.java</span></div><h1>DrawFrame.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Point;
+import java.io.IOException;
+
+import javax.swing.JFrame;
+
+/**
+ * Class for displaying GUI elements
+ * @author Braden Munn
+ *
+ */
+public class DrawFrame extends JFrame{
+
+	private static DrawPanel drawPanel;
+	
+	/**
+	 * Creates an image of a snowman in the window
+	 * @param title Title for the JFrame
+	 * @throws IOException for file
+	 */
+	public DrawFrame(String title) throws IOException
+	{
+<span class="nc" id="L23">		super(title);</span>
+<span class="nc" id="L24">		this.setSize(1000, 1000);</span>
+<span class="nc" id="L25">		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L26">		this.setVisible(true);</span>
+		
+<span class="nc" id="L28">		DrawPanel panel = new DrawPanel();</span>
+<span class="nc" id="L29">		panel.setSize(1000, 1000);</span>
+<span class="nc" id="L30">		panel.setBounds(0, 0, 1000, 1000);</span>
+<span class="nc" id="L31">		this.add(panel);</span>
+		
+		// Background
+<span class="nc" id="L34">		Square sky = new Square(new Point(0,0), 1000, Color.BLUE, true);</span>
+<span class="nc" id="L35">		Rectangle snow = new Rectangle(new Point(0, 600), 1000, 400, Color.WHITE, true);</span>
+		
+		// Snowman body
+<span class="nc" id="L38">		Oval baseOutline = new Oval(new Point(345, 495), 310, 210, Color.BLACK, true);</span>
+<span class="nc" id="L39">			Oval base = new Oval(new Point(350, 500), 300, 200, Color.WHITE, true);</span>
+<span class="nc" id="L40">		Circle middleOutline = new Circle(new Point(395, 295), 210, Color.BLACK, true);</span>
+<span class="nc" id="L41">			Circle middle = new Circle(new Point(400, 300), 200, Color.WHITE, true);	</span>
+<span class="nc" id="L42">		Circle headOutline = new Circle(new Point(420, 145), 160, Color.BLACK, true);</span>
+<span class="nc" id="L43">			Circle head = new Circle(new Point(425, 150), 150, Color.WHITE, true);</span>
+		
+		// Buttons
+<span class="nc" id="L46">		Diamond buttonTop = new Diamond(new Point(495, 380), 10, Color.BLACK, true);</span>
+<span class="nc" id="L47">		Diamond buttonMiddle = new Diamond(new Point(495, 440), 10, Color.BLACK, true);</span>
+<span class="nc" id="L48">		Diamond buttonBottom = new Diamond(new Point(495, 530), 10, Color.BLACK, true);</span>
+		
+		// Arms
+<span class="nc" id="L51">		Sinusoid rightArm = new Sinusoid(new Color(101, 67, 33), new Point(600, 400), 1, 4, 10);</span>
+<span class="nc" id="L52">		Sinusoid leftArm = new Sinusoid(new Color(101, 67, 33), new Point(20, 400), 1, 4, 10);</span>
+		
+		// Face
+<span class="nc" id="L55">		RightTriangle nose = new RightTriangle(new Point(490, 260), 35, -25, Color.ORANGE, true);</span>
+<span class="nc" id="L56">		IsoscelesTriangle leftEye = new IsoscelesTriangle(new Point(465, 215), 20, -20, Color.BLACK, true);</span>
+<span class="nc" id="L57">		IsoscelesTriangle rightEye = new IsoscelesTriangle(new Point(515, 215), 20, -20, Color.BLACK, true);</span>
+		
+<span class="nc" id="L59">		panel.addShape(sky);</span>
+<span class="nc" id="L60">		panel.addShape(snow);</span>
+<span class="nc" id="L61">		panel.addShape(baseOutline);</span>
+<span class="nc" id="L62">		panel.addShape(base);</span>
+<span class="nc" id="L63">		panel.addShape(middleOutline);</span>
+<span class="nc" id="L64">		panel.addShape(middle);</span>
+<span class="nc" id="L65">		panel.addShape(headOutline);</span>
+<span class="nc" id="L66">		panel.addShape(head);</span>
+		
+<span class="nc" id="L68">		panel.addShape(buttonTop);</span>
+<span class="nc" id="L69">		panel.addShape(buttonMiddle);</span>
+<span class="nc" id="L70">		panel.addShape(buttonBottom);</span>
+		
+<span class="nc" id="L72">		panel.addShape(rightArm);</span>
+<span class="nc" id="L73">		panel.addShape(leftArm);</span>
+		
+<span class="nc" id="L75">		panel.addShape(nose);</span>
+<span class="nc" id="L76">		panel.addShape(leftEye);</span>
+<span class="nc" id="L77">		panel.addShape(rightEye);</span>
+		
+
+<span class="nc" id="L80">		PanelToImage.makePanelPNGImage(panel, &quot;Snowman&quot;);</span>
+		
+		
+		
+<span class="nc" id="L84">	}</span>
+	
+	public static void main(String[] args) throws IOException
+	{
+<span class="nc" id="L88">		DrawFrame frame = new DrawFrame(&quot;Snowman&quot;);</span>
+<span class="nc" id="L89">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span>TestRunner (2) (Apr 16, 2019 10:27:08 PM)</div></body></html>

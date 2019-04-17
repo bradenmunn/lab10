@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TriangleTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (2) (Apr 16, 2019 10:27:08 PM)</a> &gt; <a href="../../index.html" class="el_group">lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">TriangleTest.java</span></div><h1>TriangleTest.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Point;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+<span class="fc" id="L7">public class TriangleTest {</span>
+<span class="fc" id="L8">	private RightTriangle r1 = new RightTriangle(new Point(100, 100), 50, 30, Color.RED, true);</span>
+<span class="fc" id="L9">	private IsoscelesTriangle i1 = new IsoscelesTriangle(new Point(200, 200), 50, 100, Color.BLUE, false);</span>
+	
+	@Test
+	public void testTriangleConstructors()
+	{
+		// Verify the quantity of points for each shape
+<span class="fc" id="L15">        Assert.assertEquals(&quot;Quantity of points defining the RightTriangle is more than 3&quot;, 3, r1.getLocation().length);</span>
+<span class="fc" id="L16">        Assert.assertEquals(&quot;Quantity of points defining the IsoscelesTriangle is more than 3&quot;, 3, i1.getLocation().length);</span>
+        
+        // Verify the location of each Point for each shape
+<span class="fc" id="L19">        Assert.assertEquals(&quot;Incorrect location for the RightTriangle&quot;, new Point(100, 100), r1.getLocation()[0]);</span>
+<span class="fc" id="L20">        Assert.assertEquals(&quot;Incorrect location for the RightTriangle&quot;, new Point(150, 100), r1.getLocation()[1]);</span>
+<span class="fc" id="L21">        Assert.assertEquals(&quot;Incorrect location for the RightTriangle&quot;, new Point(100, 130), r1.getLocation()[2]);</span>
+<span class="fc" id="L22">        Assert.assertEquals(&quot;Incorrect location for the IsoscelesTriangle&quot;, new Point(200, 200), i1.getLocation()[0]);</span>
+<span class="fc" id="L23">        Assert.assertEquals(&quot;Incorrect location for the IsoscelesTriangle&quot;, new Point(250, 200), i1.getLocation()[1]);</span>
+<span class="fc" id="L24">        Assert.assertEquals(&quot;Incorrect location for the IsoscelesTriangle&quot;, new Point(225, 300), i1.getLocation()[2]);</span>
+        
+        // Verify the colors for each shape
+<span class="fc" id="L27">        Assert.assertEquals(&quot;Incorrect color for the RightTriangle&quot;, Color.RED, r1.getColor());</span>
+<span class="fc" id="L28">        Assert.assertEquals(&quot;Incorrect color for the IsoscelesTriangle&quot;, Color.BLUE, i1.getColor());</span>
+        
+        // Verify the appropriate filled flag for each shape
+<span class="fc" id="L31">        Assert.assertTrue(&quot;Incorrect flag for filled for the RightTriangle&quot;, r1.isFilled());</span>
+<span class="fc" id="L32">        Assert.assertFalse(&quot;Incorrect flag for filled for the IsoscelesTriangle&quot;, i1.isFilled());</span>
+<span class="fc" id="L33">        }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span>TestRunner (2) (Apr 16, 2019 10:27:08 PM)</div></body></html>

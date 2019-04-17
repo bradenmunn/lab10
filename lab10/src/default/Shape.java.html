@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Shape.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (2) (Apr 16, 2019 10:27:08 PM)</a> &gt; <a href="../../index.html" class="el_group">lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Shape.java</span></div><h1>Shape.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+/**
+ * Abstract parent class for a generic Shape
+ * @author Braden Munn
+ *
+ */
+public abstract class Shape implements Drawable{
+
+	protected Point[] location;
+	private Color color;
+	private boolean filled;
+	
+	/**
+	 * Constructor for Shape
+	 * @param color Color of the Shape
+	 * @param filled Whether or not the Shape is filled
+	 */
+<span class="fc" id="L21">	public Shape(Color color, boolean filled)</span>
+	{
+<span class="fc" id="L23">		this.color = color;</span>
+<span class="fc" id="L24">		this.filled = filled;</span>
+<span class="fc" id="L25">	}</span>
+	
+	/**
+	 * Returns color
+	 * @return Color of Shape
+	 */
+	public Color getColor()
+	{
+<span class="fc" id="L33">		return color;</span>
+	}
+	
+	/**
+	 * Returns whether or not the shape is filled
+	 * @return True if filled, false otherwise
+	 */
+	public boolean isFilled()
+	{
+<span class="fc" id="L42">		return filled;</span>
+	}
+	
+	/**
+	 * Returns the location of all points
+	 * @return location array of Point objects
+	 */
+	public Point[] getLocation()
+	{
+<span class="fc" id="L51">		return location;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span>TestRunner (2) (Apr 16, 2019 10:27:08 PM)</div></body></html>

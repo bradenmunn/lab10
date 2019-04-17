@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>PolyLine.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (2) (Apr 16, 2019 10:27:08 PM)</a> &gt; <a href="../../index.html" class="el_group">lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">PolyLine.java</span></div><h1>PolyLine.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Point;
+
+/**
+ * Creates a Polygon out of two connected points, creates a parallel line
+ * of length THICKNESS away from the original line, and connects the 4 points
+ * @author Braden Munn
+ *
+ */
+public class PolyLine extends Polygon{
+	
+	
+/**
+ * Creates a parallel line of length THICKNESS away from the original line, 
+ * and connects the 4 points
+ * @param pointUL Upper left point
+ * @param pointUR Upper right point
+ * @param thickness Distance from initial line to second line
+ * @param color Color of the polygon
+ * @param fill Whether or not the Polygon is filled
+ */
+	public PolyLine(Point pointUL, Point pointUR, int thickness, Color color, boolean fill) {
+<span class="fc" id="L23">		super(color, fill);</span>
+<span class="fc" id="L24">		location = new Point[4];</span>
+<span class="fc" id="L25">		location[0] = pointUL;</span>
+<span class="fc" id="L26">		location[1] = pointUR;</span>
+		
+		// Adds bottom left point (will be top left if negative thickness value)
+<span class="fc" id="L29">		int xBL = (int)pointUL.getX();</span>
+<span class="fc" id="L30">		int yBL = (int)pointUL.getY() + thickness;</span>
+<span class="fc" id="L31">		Point pointBL = new Point(xBL, yBL);</span>
+<span class="fc" id="L32">		location[2] = pointBL;</span>
+		
+		// Adds bottom right point (will be top right if negative thickness value)
+<span class="fc" id="L35">		int xBR = (int)pointUR.getX();</span>
+<span class="fc" id="L36">		int yBR = (int)pointUR.getY() + thickness;</span>
+<span class="fc" id="L37">		Point pointBR = new Point(xBR, yBR);</span>
+<span class="fc" id="L38">		location[3] = pointBR;</span>
+<span class="fc" id="L39">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span>TestRunner (2) (Apr 16, 2019 10:27:08 PM)</div></body></html>
